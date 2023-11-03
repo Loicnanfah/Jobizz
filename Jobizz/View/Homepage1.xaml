@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jobizz.View.Homepage1"
+             Shell.NavBarIsVisible="False"
+             xmlns:ViewModel="clr-namespace:Jobizz.ViewModel"
+             xmlns:models="clr-namespace:Jobizz.Model"
+             x:DataType="ViewModel:JobListViewModel"
+             Title="Homepage1">
+    <VerticalStackLayout>
+        
+        <Label 
+            Text="Welcome Back!"
+            Margin="20,25,0,0"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" 
+            FontSize="15"
+            TextColor="#95969D"
+            />
+        <Frame HorizontalOptions="EndAndExpand"
+               CornerRadius="30"
+               HeightRequest="60"
+               WidthRequest="60"
+               Margin="10,-30,10,0"
+               >
+            <Image BackgroundColor="AliceBlue"/>
+        </Frame>
+        <Label Text="User Name 👋" FontSize="Title" FontAttributes="Bold" Margin="20,-30,0,0" />
+
+        <Grid>
+
+
+            <SearchBar    
+                x:Name="searchBar"
+                Grid.Row="1"
+                Placeholder="Search a job or position"
+                PlaceholderColor="#95969D"
+                HeightRequest="35"
+                WidthRequest="300"                                     
+                BackgroundColor="#F2F2F3"
+                HorizontalOptions="StartAndExpand"
+                Margin="20"
+                />
+
+            <Frame HorizontalOptions="EndAndExpand"
+                   CornerRadius="12"
+                   HeightRequest="35"
+                   WidthRequest="35"
+                   Grid.Row="2"
+                   BackgroundColor="#F2F2F3"
+                   Margin="15">
+                <ImageButton Source="settings"
+                             HeightRequest="15"
+                             WidthRequest="15"
+                             x:Name="setting"
+                             Rotation="90"
+                             />
+            </Frame>
+        </Grid>
+        <Grid RowDefinitions="20*,20*">
+            <Label Text="Featured Jobs"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   Grid.Row="1"
+                   HorizontalOptions="StartAndExpand"
+                   Margin="20,-38,0,0"
+                   />
+            <Label x:Name="seeallbtn"
+                   Text="See all"
+                   TextColor="#95969D"
+                   HorizontalOptions="EndAndExpand"
+                   Grid.Column="2"
+                   Margin="15"
+                  />
+        </Grid>
+
+        <CarouselView Loop="False"
+                        ItemsSource="{Binding Jobs}"  
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="FillAndExpand"
+                        IndicatorView="indicatorVieW"
+                        >
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="models:JobModel">
+                    <Grid RowDefinitions="30*,30*"
+                             Margin="-80,0,0,0">
+                        <Frame x:Name="cartviewjob"
+                             WidthRequest="370"
+                             HeightRequest="186"
+                             CornerRadius="24"
+                             BackgroundColor="#6D62F6"
+                             Grid.Row="1"
+                             Opacity="30"
+                             Margin="80,0,0,0">
+                            <Grid>
+                                <Image  x:Name="backframeimage"
+                                        WidthRequest="280"
+                                        HeightRequest="186"
+                                        Source="maskgroup"/>
+
+                                <Frame HeightRequest="46"
+                                   WidthRequest="46"
+                                   HorizontalOptions="StartAndExpand"
+                                   VerticalOptions="StartAndExpand"
+                                   Grid.Row="1" 
+                                   >
+                                    
+                                    <Image 
+                                        Source="{Binding EmployerLogo}"
+                                        HeightRequest="50"
+                                        WidthRequest="50"
+                                       />
+                                </Frame>
+                                <Label Text="{Binding JobTitle}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="Caption"
+                                       Margin="55,0,0,0"
+                                       HorizontalOptions="StartAndExpand"/>
+                                <Label Text="{Binding EmployerName}"
+                                       TextColor="#FFFFFF"
+                                       Opacity="0.5"
+                                       FontSize="Small"
+                                       HorizontalOptions="StartAndExpand"
+                                       Margin="55,25,0,0"/>
+                                <ImageButton x:Name="savemark"
+                                         Source="addbookmark"
+                                         HorizontalOptions="EndAndExpand"
+                                         VerticalOptions="EndAndExpand"
+                                         HeightRequest="20"
+                                         WidthRequest="20"
+                                         Margin="0,0,-0,120"/>
+
+                                <Frame HeightRequest="26"
+                                   WidthRequest="130"                                   
+                                   BackgroundColor="#4DFFFFFF"
+                                       Margin="0,20,0,0"
+                                   HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding JobEmploymentType}"
+                                                   TextColor="White"                              
+                                                   HeightRequest="25"
+                                                   WidthRequest="60"
+                                                   FontSize="11"
+                                                   Margin="0,9,0,0"
+                                                   HorizontalTextAlignment="Center"/>
+                                </Frame>
+                                <Frame HeightRequest="26"
+                                   WidthRequest="90"
+                                   Opacity="0.5"
+                                   Margin="45,20,0,0"
+                                   BackgroundColor="#4DFFFFFF"
+                                   HorizontalOptions="CenterAndExpand">
+                                    <Label Text="Design"
+                                                   TextColor="White"                              
+                                                   HeightRequest="25"
+                                                   WidthRequest="60"
+                                                   FontSize="11"
+                                                   Margin="0,9,0,0"
+                                                   HorizontalTextAlignment="Center"/>
+                                </Frame>
+                                <Frame HeightRequest="26"
+                                       WidthRequest="90"
+                                       Opacity="0.5"
+                                       BackgroundColor="#4DFFFFFF"
+                                       HorizontalOptions="EndAndExpand"
+                                        Margin="0,20,0,0">
+                                <Label Text="Design"
+                                                   TextColor="White"                              
+                                                   HeightRequest="25"
+                                                   WidthRequest="60"
+                                                   FontSize="11"
+                                                   Margin="0,9,0,0"
+                                                   HorizontalTextAlignment="Center"/>
+                                </Frame>
+                                <Label HorizontalOptions="StartAndExpand"
+                                                   VerticalOptions="EndAndExpand"
+                                                   TextColor="White"
+                                                   FontSize="13"
+                                                   Text="$56000,00/Year"/>
+                                <Label HorizontalOptions="CenterAndExpand"
+                                                   VerticalOptions="EndAndExpand"
+                                                   TextColor="White" 
+                                                   Text="{Binding jobcity}"
+                                                   Margin="200,0,0,0"
+                                                   FontSize="11"/>
+                                <Label HorizontalOptions="EndAndExpand"
+                                                   VerticalOptions="EndAndExpand"
+                                                   TextColor="White" 
+                                                   Text="{Binding jobstate}"
+                                                    Margin="20,0,0,0"
+                                                   FontSize="11"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,20,0,0">
+            <IndicatorView  x:Name="indicatorVieW"
+                               IndicatorSize="8"
+                                Count="5"
+                                MaximumVisible="5"                               
+                               IndicatorColor="LightGray"
+                               SelectedIndicatorColor="#7A0498"
+                               />
+        </StackLayout>
+
+        <StackLayout>
+         
+        </StackLayout>
+        
+    </VerticalStackLayout>
+</ContentPage>

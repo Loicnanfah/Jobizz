@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModel="clr-namespace:Jobizz.ViewModel"
+             xmlns:models="clr-namespace:Jobizz.Model"
+             Shell.NavBarIsVisible="False"
+             x:Class="Jobizz.View.OnboardingView"
+             x:DataType="ViewModel:OnboardingViewModel"
+             Title="OnboardingView">
+
+
+    <StackLayout Margin="10">
+        <CarouselView 
+                      Position="{Binding Position}"
+                      IndicatorView="indicatorVieW"
+                      Loop="False"
+                      ItemsSource="{Binding IntroOnboarding}"  
+                      HorizontalOptions="FillAndExpand" 
+                      VerticalOptions="FillAndExpand">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="models:OnboardingModel">
+                    <Grid RowDefinitions="10*,5*">
+                        <StackLayout Grid.Row="0" Margin="0,180,0,0" >
+                            <Image Source="{Binding IntroImage}" Aspect="AspectFill"  HeightRequest="230"  WidthRequest="200"/>
+                        </StackLayout>
+                        <VerticalStackLayout Spacing="10" Grid.Row="4">
+                            <Label Text="{Binding IntroTitle}" FontSize="28" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="#9494B4" Margin="5"/>
+                            <Label Text="{Binding IntroDescription}"  TextColor="#95969D" FontSize="20" Margin="20,2,0,10"/>
+                            
+                        </VerticalStackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <StackLayout Orientation="Horizontal">
+            <IndicatorView  x:Name="indicatorVieW"
+               IndicatorSize="10"
+               IndicatorColor="LightGray"
+               SelectedIndicatorColor="#FFD700"
+               Margin="125,0,400,100"
+               />   
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"  >
+            <Label Text="Skip" TextColor="Grey" FontSize="15" Margin="10,30,5,19"/>
+            <Frame 
+                HorizontalOptions="EndAndExpand"
+                CornerRadius="10"
+                Padding="0"
+                HeightRequest="50"
+                WidthRequest="150"
+                BackgroundColor="#6D62F6">
+              
+                <Label 
+                   Text="{Binding ButtonText}"
+                    FontSize="15"
+                    TextColor="White"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NextCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
