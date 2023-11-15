@@ -208,7 +208,7 @@
 
         <StackLayout >
             
-            <StackLayout>
+            <StackLayout Margin="0,60,0,0">
                 <Label Text="POPULAR JOB" FontSize="19" FontAttributes="Bold" Margin="25"/>
                 <Label Text="see all" TextColor="#95969D" HorizontalOptions="EndAndExpand" Margin="0,-45,25,0"/>
 
@@ -216,7 +216,7 @@
                      <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Jobs}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="models:JobModel">
-                                <Frame WidthRequest="160" HeightRequest="170" CornerRadius="24" BackgroundColor="#F1F1F1" Margin="10,5,1,10">
+                                <Frame WidthRequest="160" HeightRequest="170" CornerRadius="24" BackgroundColor="White" Margin="10,15,1,10">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="39*"/>

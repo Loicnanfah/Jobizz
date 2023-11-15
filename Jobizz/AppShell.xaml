@@ -6,9 +6,30 @@
     xmlns:local="clr-namespace:Jobizz.View"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:Homepage1}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title=""
+            Icon="home"
+            ContentTemplate="{DataTemplate local:Homepage1}"
+            Route="MainPage" />
+
+        <ShellContent
+            Title=""
+            Icon="email"
+            ContentTemplate="{DataTemplate local:MessagePage}"
+            Route="MainPage" />
+
+        <ShellContent
+            Title=""
+            Icon="bookmark"
+            ContentTemplate="{DataTemplate local:BookmakePage}"
+            Route="MainPage" />
+
+        <ShellContent
+            Title=""
+            Icon="viewall"
+            ContentTemplate="{DataTemplate local:NotificationPage}"
+            Route="MainPage" />
+    </TabBar>
 
 </Shell>
