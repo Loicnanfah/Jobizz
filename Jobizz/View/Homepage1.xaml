@@ -212,29 +212,32 @@
                 <Label Text="POPULAR JOB" FontSize="19" FontAttributes="Bold" Margin="25"/>
                 <Label Text="see all" TextColor="#95969D" HorizontalOptions="EndAndExpand" Margin="0,-45,25,0"/>
 
-                <ScrollView VerticalOptions="FillAndExpand" Orientation="Vertical">
-                    <StackLayout BindableLayout.ItemsSource="{Binding Jobs}">
+                <ScrollView Orientation="Horizontal" >
+                     <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Jobs}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="models:JobModel">
-                                <Frame WidthRequest="375" HeightRequest="89" CornerRadius="24" BackgroundColor="#F1F1F1" Margin="0,10,0,10">
+                                <Frame WidthRequest="160" HeightRequest="170" CornerRadius="24" BackgroundColor="#F1F1F1" Margin="10,5,1,10">
                                     <Grid>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="5*"/>
-                                            <RowDefinition Height="5*"/>
+                                            <RowDefinition Height="39*"/>
+                                            <RowDefinition Height="1*"/>
                                         </Grid.RowDefinitions>
 
-                                        <Frame HeightRequest="50" WidthRequest="55" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" CornerRadius="30" Grid.Row="0">
-                                            <Image Source="{Binding EmployerLogo}" HeightRequest="50" WidthRequest="50"/>
+                                        <Frame HeightRequest="46" WidthRequest="46" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" CornerRadius="30" Grid.Row="0" BorderColor="White">
+                                            <Image Source="{Binding EmployerLogo}" HeightRequest="55" WidthRequest="55"/>
                                         </Frame>
 
-                                        <Label Text="{Binding JobTitle}" TextTransform="Default" FontSize="14" HorizontalOptions="StartAndExpand" Margin="65,4,0,0"/>
-                                        
+                                        <Label Text="{Binding JobTitle}" TextTransform="Default" FontSize="14" HorizontalOptions="CenterAndExpand" Margin="10,60,0,10" HorizontalTextAlignment="Center"/>
+                                        <Label Text="{Binding EmployerName}" TextColor="#95969D" HorizontalOptions="CenterAndExpand" Margin="10,100,0,10"/>
+
                                     </Grid>
                                 </Frame>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
-                    </StackLayout>
+                    </HorizontalStackLayout>
+               
                 </ScrollView>
+                   
             </StackLayout>
 
         </StackLayout>
