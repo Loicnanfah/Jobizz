@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jobizz.View.DetailJobs"
+             Shell.NavBarIsVisible="False"
+             Title="DetailJobs">
+    <VerticalStackLayout>
+        <Frame x:Name="detailcard1"
+               WidthRequest="400"
+               HeightRequest="326"
+               CornerRadius="20"
+               BackgroundColor="#6D62F6">
+            <Grid>
+                <Image WidthRequest="370"
+                   HeightRequest="290"
+                   Source="bggroup"/>
+                <Frame HeightRequest="90" WidthRequest="90" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" Margin="10,40,0,10" CornerRadius="30" Grid.Row="0" BorderColor="White">
+                    <Image Source="google" HeightRequest="70" WidthRequest="70"/>
+                </Frame>
+                <ImageButton x:Name="backbtn" Source="back"  Margin="10,-190,0,0" WidthRequest="24" HeightRequest="24" HorizontalOptions="StartAndExpand"/>
+                <ImageButton x:Name="addbook" Source="addbookmark"  Margin="10,-190,0,0" WidthRequest="24" HeightRequest="24" HorizontalOptions="EndAndExpand"/>
+                <Label Text="product designer"  TextTransform="Default" TextColor="White" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="20" Margin="0,150,0,0"/>
+                <Label Text="google" TextColor="GhostWhite" HorizontalOptions="Center" Margin="0,175,0,0"/>
+                <Frame HeightRequest="26"
+                       WidthRequest="100"                                   
+                       BackgroundColor="#4DFFFFFF"
+                        Margin="0,180,0,0"
+                    HorizontalOptions="StartAndExpand">
+                    <Label Text="parttime"
+                    TextColor="White"                              
+                    HeightRequest="25"
+                    WidthRequest="60"
+                    FontSize="11"
+                    Margin="0,9,0,0"
+                    HorizontalTextAlignment="Center"/>
+                </Frame>
+
+                <Frame HeightRequest="26"
+                         WidthRequest="100"                                   
+                        BackgroundColor="#4DFFFFFF"
+                        Margin="0,180,0,0"
+                        HorizontalOptions="CenterAndExpand">
+                    <Label Text="parttime"
+                        TextColor="White"                              
+                        HeightRequest="25"
+                        WidthRequest="60"
+                        FontSize="11"
+                        Margin="0,9,0,0"
+                        HorizontalTextAlignment="Center"/>
+                </Frame>
+                <Frame   HeightRequest="26"
+                         WidthRequest="100"                                   
+                         BackgroundColor="#4DFFFFFF"
+                         Margin="0,180,0,0"
+                         HorizontalOptions="EndAndExpand">
+                    <Label Text="parttime"
+                        TextColor="White"                              
+                        HeightRequest="25"
+                        WidthRequest="60"
+                        FontSize="11"
+                        Margin="0,9,0,0"
+                        HorizontalTextAlignment="Center"/>
+                </Frame>
+
+                <Label Text="price" VerticalOptions="StartAndExpand" TextColor="White" TextTransform="Default" FontAttributes="Bold" FontSize="16" Margin="30,260,0,0"/>
+                <Label Text="califormie/usa" HorizontalOptions="CenterAndExpand" TextColor="White" TextTransform="Default" FontAttributes="Bold" FontSize="16" Margin="60,260,0,0"/>
+
+            </Grid>
+                       
+        </Frame>
+        <Grid>
+            
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

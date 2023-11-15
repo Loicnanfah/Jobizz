@@ -50,10 +50,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\addbook.ico" />
 	  <None Remove="Resources\Images\addbookmark.ico" />
 	  <None Remove="Resources\Images\apply.png" />
+	  <None Remove="Resources\Images\back.ico" />
+	  <None Remove="Resources\Images\bggroup.png" />
 	  <None Remove="Resources\Images\Bookmark.ico" />
 	  <None Remove="Resources\Images\browser.png" />
+	  <None Remove="Resources\Images\colorbg.png" />
 	  <None Remove="Resources\Images\Email.ico" />
 	  <None Remove="Resources\Images\Google.ico" />
 	  <None Remove="Resources\Images\Home.ico" />
@@ -67,6 +71,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="View\BookmakePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\DetailJobs.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Homepage1.xaml">

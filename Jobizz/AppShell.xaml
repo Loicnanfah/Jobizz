@@ -28,7 +28,7 @@
         <ShellContent
             Title=""
             Icon="viewall"
-            ContentTemplate="{DataTemplate local:NotificationPage}"
+            ContentTemplate="{DataTemplate local:DetailJobs}"
             Route="MainPage" />
     </TabBar>
 
